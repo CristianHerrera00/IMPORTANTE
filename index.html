@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letrero LED Universidad</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #03060d;
+      color: #ffffff;
+      font-family: 'Arial Narrow', 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Estilo del texto LED comprimido */
+    .led-text {
+      font-size: 3.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1.05;
+      color: #e0f7fc;
+      transform: scaleX(0.9);
+      text-shadow: 
+        0 0 5px #7dd3fc,
+        0 0 10px #38bdf8,
+        0 0 20px #0284c7,
+        0 0 40px #0284c7,
+        0 0 80px #0369a1;
+      animation: neonGlow 3s infinite alternate ease-in-out;
+    }
+
+    /* Animación de cambio de luces LED azul claro */
+    @keyframes neonGlow {
+      0% {
+        color: #e0f7fc;
+        text-shadow: 
+          0 0 5px #7dd3fc,
+          0 0 15px #38bdf8,
+          0 0 30px #0284c7,
+          0 0 60px #0284c7;
+      }
+      50% {
+        color: #ffffff;
+        text-shadow: 
+          0 0 8px #bae6fd,
+          0 0 25px #00f0ff,
+          0 0 45px #0284c7,
+          0 0 90px #0369a1;
+      }
+      100% {
+        color: #bae6fd;
+        text-shadow: 
+          0 0 4px #38bdf8,
+          0 0 12px #0284c7,
+          0 0 25px #0369a1,
+          0 0 50px #1e40af;
+      }
+    }
+
+    /* Ajustes específicos para celulares */
+    @media (max-width: 600px) {
+      .led-text {
+        font-size: 2.3rem;
+        letter-spacing: -2px;
+        transform: scaleX(0.82);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="led-text">Hola ya llegué a la universidad</h1>
+  </div>
+
+</body>
+</html>
